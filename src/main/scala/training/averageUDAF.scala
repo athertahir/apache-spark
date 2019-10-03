@@ -50,7 +50,7 @@ object avgRatingUDAF {
     val ratings = sparkSession.read
       .format("csv")
       .options(Map("InferSchema" -> "true", "header" -> "true"))
-      .load("chapter_9/ratings_head.csv")
+      .load("/home/scrapbook/tutorial/apache-spark/Files/chapter_9/ratings_head.csv")
 
     ratings.createOrReplaceTempView("ratings")
 

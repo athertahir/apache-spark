@@ -16,7 +16,7 @@ object rddToDs {
       .master("local[*]")
       .getOrCreate()
 
-    val input = ss.sparkContext.textFile("chapter_8/mlb_players.csv")
+    val input = ss.sparkContext.textFile("/home/scrapbook/tutorial/apache-spark/Files/chapter_8/mlb_players.csv")
 
     val removeHeader = input.mapPartitionsWithIndex((index, itr) => {
       if (index == 0) itr.drop(1) else itr

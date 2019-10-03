@@ -14,12 +14,12 @@ object sqlJoins {
     val movies = spark.read
       .format("csv")
       .options(Map("inferSchema" -> "true", "header" -> "true"))
-      .load("chapter_7/movies-head.csv")
+      .load("/home/scrapbook/tutorial/apache-spark/Files/chapter_7/movies-head.csv")
 
     val ratings = spark.read
       .format("csv")
       .options(Map("inferSchema" -> "true", "header" -> "true"))
-      .load("chapter_7/ratings-head.csv")
+      .load("/home/scrapbook/tutorial/apache-spark/Files/chapter_7/ratings-head.csv")
 
     movies.createOrReplaceTempView("movies")
     ratings.createOrReplaceTempView("ratings")

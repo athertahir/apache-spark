@@ -15,7 +15,7 @@ object sqlQueries {
     val users = spark.read
       .format("csv")
       .options(Map("inferSchema" -> "true", "header" -> "true"))
-      .load("chapter_7/us-500.csv")
+      .load("/home/scrapbook/tutorial/apache-spark/Files/chapter_7/us-500.csv")
 
     users.createOrReplaceTempView("users")
 
@@ -33,7 +33,7 @@ object sqlQueries {
 
     userCountByState.write
       .format("csv")
-      .save("chapter_7/output")
+      .save("/home/scrapbook/tutorial/apache-spark/Files/chapter_7/output")
 
   }
 

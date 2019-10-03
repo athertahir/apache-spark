@@ -22,7 +22,7 @@ object window {
       .read
       .format("csv")
       .options(Map("header" -> "true", "inferSchema" -> "true"))
-      .load("chapter_8/employee.csv")
+      .load("/home/scrapbook/tutorial/apache-spark/Files/chapter_8/employee.csv")
       .as[Employee]
 
     val window = Window.partitionBy($"dept").orderBy($"pay".desc)

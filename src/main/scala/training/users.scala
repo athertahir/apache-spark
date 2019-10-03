@@ -15,7 +15,7 @@ object users {
     val users = spark.read
       .format("json")
       .options(Map("inferSchema" -> "true", "header" -> "false", "multiLine" -> "true"))
-      .load("chapter_7/example_1.json")
+      .load("/home/scrapbook/tutorial/apache-spark/Files/chapter_7/example_1.json")
 
     users.printSchema()
 

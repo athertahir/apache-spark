@@ -20,7 +20,7 @@ object builtInFunctions {
       .read
       .format("csv")
       .options(Map("header" -> "true", "inferSchema" -> "true"))
-      .load("chapter_8/ratings-head.csv")
+      .load("/home/scrapbook/tutorial/apache-spark/Files/chapter_8/ratings-head.csv")
       .as[Rating]
       .cache()
 

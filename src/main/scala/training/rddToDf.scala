@@ -15,7 +15,7 @@ object rddToDf {
       .master("local[*]")
       .getOrCreate()
 
-    val input = ss.sparkContext.textFile("chapter_7/mlb_players.csv")
+    val input = ss.sparkContext.textFile("/home/scrapbook/tutorial/apache-spark/Files/chapter_7/mlb_players.csv")
 
     val header = input.first()
     val records = input.filter(x => x != header)

@@ -15,7 +15,7 @@ object dfOps {
     val users = spark.read
       .format("csv")
       .options(Map("inferSchema" -> "true", "header" -> "true"))
-      .load("chapter_7/us-500.csv")
+      .load("/home/scrapbook/tutorial/apache-spark/Files/chapter_7/us-500.csv")
 
     /*val floridaUsers = users.select("*").where("state = \"FL\"")
     floridaUsers.show()

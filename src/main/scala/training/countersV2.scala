@@ -16,7 +16,7 @@ object countersV2 {
     import sparkSession.implicits._
 
     val options = Map("header" -> "false", "inferSchema" -> "true")
-    val data = sparkSession.read.text("chapter_6/ratings-malformed.csv").as[String]
+    val data = sparkSession.read.text("/home/scrapbook/tutorial/apache-spark/Files/chapter_6/ratings-malformed.csv").as[String]
 
     data.foreach(record => {
       val fields = record.split(",")

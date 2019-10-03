@@ -14,8 +14,8 @@ object joins {
     Logger.getLogger("Org").setLevel(Level.ERROR)
 
     val sc = new SparkContext("local[*]", "Joins")
-    val rating = sc.textFile("chapter_5/ratings.csv").map(x => x.split(','))
-    val movie = sc.textFile("chapter_5/movies.csv").map(x => x.split(','))
+    val rating = sc.textFile("/home/scrapbook/tutorial/apache-spark/Files/chapter_5/ratings.csv").map(x => x.split(','))
+    val movie = sc.textFile("/home/scrapbook/tutorial/apache-spark/Files/chapter_5/movies.csv").map(x => x.split(','))
 
     val rating_record = rating.map(x => (x(1).toInt, ratings(x(0).toInt, x(1).toInt,
       x(2).toFloat, x(3).toString)))
