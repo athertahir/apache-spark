@@ -29,6 +29,8 @@ object countByMovieMain {
     })
 
     println(countByMovie.value.toList)
+
+    sparkSession.stop()
   }
 
 }

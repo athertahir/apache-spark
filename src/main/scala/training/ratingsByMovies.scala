@@ -34,6 +34,7 @@ object ratingsByMovies {
 
     sortedMoviesWithNames.collect.foreach(println)
 
+    sc.stop()
   }
 
 }

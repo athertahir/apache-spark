@@ -22,11 +22,14 @@ object tags {
     val data = sc.textFile("/home/scrapbook/tutorial/apache-spark/Files/chapter_5/tags.csv")
     val RDDPair = data.map(parseRecords)
     val grouped = RDDPair.groupByKey()
-    //grouped.collect.foreach(println)
+    grouped.collect.foreach(println)
+	
     val flattened = grouped.map(x => (x._1, x._2.toList))
     //flattened.collect.foreach(println)
+	
     val RDDValues = flattened.values
-    RDDValues.collect.foreach(println)
-
+    //RDDValues.collect.foreach(println)
+	
+	sc.stop()
   }
 }

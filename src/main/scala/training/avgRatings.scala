@@ -37,7 +37,7 @@ object avgRatings {
 
     sorted.collect.foreach(println)
 	
-	sc.stop()
+	  sc.stop()
 
   }
 

@@ -31,6 +31,7 @@ object rddToDf {
 
     recordsDf.show()
 
+    ss.stop()
   }
 
 }
