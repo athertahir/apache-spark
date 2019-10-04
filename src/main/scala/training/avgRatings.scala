@@ -22,15 +22,22 @@ object avgRatings {
     val sc = new SparkContext("local[*]", "Average ratings by users")
     val data = sc.textFile("/home/scrapbook/tutorial/apache-spark/Files/chapter_5/ratings.csv")
     val RDDPair = data.map(parseRecords)
-    //RDDPair.collect.foreach(println)
+
+    RDDPair.collect.foreach(println)
+    
     val mappedRatings = RDDPair.mapValues(x => (x, 1))
     //mappedRatings.collect.foreach(println)
+    
     val totalRatings = mappedRatings.reduceByKey( (x, y) => (x._1 + y._1, x._2 + y._2))
+    
     val avgRatings = totalRatings.mapValues(x => x._1/x._2)
     //avgRatings.collect.foreach(println)
+    
     val sorted = avgRatings.sortByKey(false)
 
     sorted.collect.foreach(println)
+	
+	sc.stop()
 
   }
 

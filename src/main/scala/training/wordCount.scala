@@ -17,7 +17,13 @@ object wordCount {
     val wordskv = words.map(word => (word,1))
     val count = wordskv.reduceByKey((x,y) => x + y)
 
-    count.toDebugString.foreach(print)
+    count.collect.foreach(println)
+
+    //count.saveAsTextFile("chapter_4/word_count/output")
+
+    //count.toDebugString.foreach(print)
+
+    sc.stop()
 
   }
 
