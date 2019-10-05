@@ -43,7 +43,9 @@ object decrRatingUDF {
     ratings.createOrReplaceTempView("ratings")
 
     val ratingDecDf = spark.sql("select *, decrUDF2(rating) as ratingDec from ratings")
-    ratingDecDf.show()
+    //ratingDecDf.show()
+	
+	spark.stop()
 
   }
 }
