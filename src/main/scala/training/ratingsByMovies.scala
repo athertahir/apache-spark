@@ -14,7 +14,7 @@ object ratingsByMovies {
     for(record <- data){
       val fields = record.split(",")
       if(fields.length > 1)
-        movieNames += (fields(0).toInt -> fields(1))
+        movieNames += (fields(0).replaceAll("\\uFEFF", "").toInt -> fields(1))
     }
     movieNames
   }

@@ -26,6 +26,8 @@ object countersV2 {
     })
 
     println("The number of bad records in the input are " + badRecords.value)
+    
+    sparkSession.stop()
   }
 
 }

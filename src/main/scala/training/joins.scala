@@ -24,7 +24,8 @@ object joins {
       x(2).toString)))
 
     val joined = rating_record.join(movie_record)
-    //joined.collect.foreach(println)
+    joined.collect.foreach(println)
+    
     joined.persist(StorageLevel.MEMORY_AND_DISK_SER)
 
     val count = joined.countByKey()
