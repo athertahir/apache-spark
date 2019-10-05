@@ -51,6 +51,8 @@ object avgTypedUADF{
     val avg = ds.select(averageRating)
 
     avg.show()
+	
+	sparkSession.stop()
   }
 
 }

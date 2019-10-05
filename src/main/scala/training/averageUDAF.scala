@@ -59,5 +59,7 @@ object avgRatingUDAF {
       "GROUP BY userId")
 
     average.show()
+	
+	sparkSession.stop()
   }
 }
