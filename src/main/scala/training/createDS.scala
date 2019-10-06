@@ -39,6 +39,8 @@ object createDS {
       .mapValues(x => x._1/x._2).sortByKey(false)
 
      count.collect.foreach(println)
+    
+    spark.stop()
   }
 
 }

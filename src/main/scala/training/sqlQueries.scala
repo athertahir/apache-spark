@@ -28,13 +28,13 @@ object sqlQueries {
     spark.conf.set("spark.sql.shuffle.partitions", "1")
 
     
-	/*val userCountByState = spark.sql("SELECT state, count(*) AS count FROM users" +
+	  /*val userCountByState = spark.sql("SELECT state, count(*) AS count FROM users" +
       " GROUP BY state ORDER BY count DESC")
-    userCountByState.show()/*
+    userCountByState.show()*/
 
     /*userCountByState.write
       .format("csv")
-      .save("/home/scrapbook/tutorial/apache-spark/Files/chapter_7/output")/*
+      .save("/home/scrapbook/tutorial/apache-spark/Files/chapter_7/output")*/
 	  
 	spark.stop()
 

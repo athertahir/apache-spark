@@ -28,6 +28,8 @@ object sqlJoins {
       .sql("SELECT * FROM movies JOIN ratings ON movies.movieId = ratings.movieId")
 
     joinedDf.show()
+	
+	spark.stop()
   }
 
 }
