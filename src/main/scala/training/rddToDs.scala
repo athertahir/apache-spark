@@ -33,6 +33,7 @@ object rddToDs {
 
     recordsDs.show()
 
+	ss.stop()
   }
 
 }
