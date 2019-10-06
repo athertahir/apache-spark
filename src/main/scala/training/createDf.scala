@@ -36,6 +36,8 @@ object createDf {
     val recordsDf = ss.sqlContext.createDataFrame(structRecords, schema)
 
     recordsDf.show()
+	
+	ss.stop()
 
   }
 

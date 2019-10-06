@@ -19,21 +19,24 @@ object sqlQueries {
 
     users.createOrReplaceTempView("users")
 
-    /*val floridaUsers = spark.sql("SELECT * FROM users WHERE state = \"FL\"")
+    val floridaUsers = spark.sql("SELECT * FROM users WHERE state = \"FL\"")
     floridaUsers.show()
 
-    val totalUsersNJ = spark.sql("SELECT count(*) AS NJ_Count FROM users WHERE state = \"NJ\"")
+    /*val totalUsersNJ = spark.sql("SELECT count(*) AS NJ_Count FROM users WHERE state = \"NJ\"")
     totalUsersNJ.show()*/
 
     spark.conf.set("spark.sql.shuffle.partitions", "1")
 
-    val userCountByState = spark.sql("SELECT state, count(*) AS count FROM users" +
+    
+	/*val userCountByState = spark.sql("SELECT state, count(*) AS count FROM users" +
       " GROUP BY state ORDER BY count DESC")
-    //userCountByState.show()
+    userCountByState.show()/*
 
-    userCountByState.write
+    /*userCountByState.write
       .format("csv")
-      .save("/home/scrapbook/tutorial/apache-spark/Files/chapter_7/output")
+      .save("/home/scrapbook/tutorial/apache-spark/Files/chapter_7/output")/*
+	  
+	spark.stop()
 
   }
 

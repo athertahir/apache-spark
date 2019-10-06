@@ -32,6 +32,8 @@ object dfOps {
       .orderBy($"count(state)".desc)
 
     userCountByState.show()
+	
+	spark.stop()
 
   }
 

@@ -12,14 +12,21 @@ object users {
       .master("local[*]")
       .getOrCreate()
 
-    val users = spark.read
-      .format("json")
-      .options(Map("inferSchema" -> "true", "header" -> "false", "multiLine" -> "true"))
-      .load("/home/scrapbook/tutorial/apache-spark/Files/chapter_7/example_1.json")
+	val users = spark.read
+	  .format("csv")
+	  .options(Map("inferSchema" -> "true", "header" -> "true"))
+	  .load("/home/scrapbook/tutorial/apache-spark/Files/chapter_7/us-500.csv")
 
     users.printSchema()
 
     users.show()
+	
+	//users.select("last_name").show()
+
+	//users.select("first_name", "last_name").show()
+	
+	spark.stop()
+
   }
 
 }
