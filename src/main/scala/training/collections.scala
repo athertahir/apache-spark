@@ -35,6 +35,8 @@ object collections {
     val sorted = numDS.select($"numbers", sort_array($"numbers", false).as("sorted"))
     sorted.show()
 
+	spark.stop()
+	
   }
 
 }

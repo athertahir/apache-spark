@@ -46,7 +46,8 @@ object window {
 
     val lags = lag($"pay", 1, 0).over(window)
     employeeDS.select($"*", lags.as("lag")).show()
-
+	
+	spark.stop()
 
   }
 

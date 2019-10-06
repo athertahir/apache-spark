@@ -49,7 +49,8 @@ object builtInFunctions {
         , sumDistinct("rating").as("distinctSum")
         , count("movieId").as("movieCount"))
     byUser.show()
-
+	
+	spark.stop()
 
   }
 
